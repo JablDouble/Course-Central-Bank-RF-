@@ -44,6 +44,28 @@ h1 {
 	box-sizing: border-box;
 }
 
+.money-down{
+	font-size: 65px;
+	color: #ff5d5b;
+	margin-top:0px;
+	margin-bottom:25px;
+	text-align: left;
+	padding-left:20px;
+}
+.money-up{
+	font-size: 65px;
+	color: #a5e7ac;
+	margin-top:0px;
+	margin-bottom:25px;
+	text-align: left;
+	padding-left:20px;
+}
+.count{
+	margin-bottom:3px;
+	margin-top:15px;
+	text-align: left;
+	padding-left:20px;
+}
 /* Paragraph & Typographic */
 p {
     line-height: 28px;
