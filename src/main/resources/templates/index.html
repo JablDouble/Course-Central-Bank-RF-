@@ -65,35 +65,46 @@
     <div class="row mt centered">
         <div class="col-lg-4">
             <div class="content">
-                <b><h3>EUR</h3></b><br>
-                <h2>65.5</h2>
+                <b><h3>Американский доллар</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-down" th:text="${usd} +' Р'"></h1>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="content">
-                <p>Украинская гривна</p>
+                <b><h3>Украинская гривна</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-up" th:text="${usd}+' Р'"></h1>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="content">
-                <p>Российский рубль</p>
+                <b><h3>Белорусский рубль</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-up" th:text="${usd}+' Р'"></h1>
             </div>
         </div>
     </div><!-- /row -->
     <div class="row mt centered">
         <div class="col-lg-4">
             <div class="content">
-                <p>Великобританский фунт</p>
+                <b><h3>Британский фунт</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-down" th:text="${usd}+' Р'"></h1>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="content">
-                <p>Евро</p>
+                <b><h3>Евро</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-down" th:text="${usd}+' Р'"></h1>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="content">
-                <p>Цена за грамм насвая</p>
+                <b><h3>Биткоины</h3></b>
+                <p class="count" th:text="'За ' + ${count} + ' единиц(у) валюты'"></p>
+                <h1 class="money-up" th:text="${usd}+' Р'"></h1>
             </div>
         </div>
     </div><!-- /row -->
