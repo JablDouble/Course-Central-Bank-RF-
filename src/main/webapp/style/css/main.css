@@ -45,7 +45,7 @@ h1 {
 }
 
 .money-down{
-	font-size: 65px;
+	font-size: 45px;
 	color: #ff5d5b;
 	margin-top:0px;
 	margin-bottom:25px;
@@ -53,7 +53,7 @@ h1 {
 	padding-left:20px;
 }
 .money-up{
-	font-size: 65px;
+	font-size: 45px;
 	color: #a5e7ac;
 	margin-top:0px;
 	margin-bottom:25px;
@@ -166,7 +166,6 @@ a:after {
 
 .pt {
 	padding-top: 50px;
-	padding-bottom: 50px;
 }
 
 
@@ -182,7 +181,6 @@ a:after {
 #footer {
 	background-color: #2f2f2f;
 	padding-top: 50px;
-	padding-bottom: 50px; 
 }
 
 #footer p {
@@ -239,10 +237,10 @@ bt {
 
 /* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
 /* Effects also are controled by hover.zoom.js */
-.zoom { 
-    display:block; 
-    position:relative; 
-    overflow:hidden; 
+.zoom {
+    display:block;
+    position:relative;
+    overflow:hidden;
     background:transparent url(../img/loader.gif) no-repeat center;
 }
 

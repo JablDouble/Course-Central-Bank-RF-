@@ -435,7 +435,7 @@ h6 .small,
 h1,
 h2,
 h3 {
-  margin-top: 20px;
+  margin-top: 3px;
   margin-bottom: 10px;
 }
 
@@ -902,6 +902,8 @@ pre code {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   padding-left: 15px;
 }
 
