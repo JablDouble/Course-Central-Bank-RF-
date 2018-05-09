@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+
+    <title>Central Bank of Russian Federation </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="style/css/bootstrap.css">
+    <link rel="stylesheet" href="style/css/reset.css">
+    <link rel="stylesheet" href="style/css/str.css">
+    <!--link rel="stylesheet" href="style/css/structure.css">
+
+    <!-- Custom styles for this template -->
+    <link href="style/css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="style/js/hover.zoom.js"></script>
+    <script src="style/js/hover.zoom.conf.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+
+            </button>
+            <a class="navbar-brand" href="course.html">Central Bank Of Russian Federation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="converter">Конвертер валют</a></li>
+                <li><a href="/">Курс валют</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- +++++ Welcome Section +++++ -->
+<div id="ww">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 centered">
+                <form action="#" th:action="@{/converter}" th:object="${int}" method="post" class="box login">
+                    <fieldset class="boxBody">
+                        <label><h1>Конвертер валют</h1></label>
+                        <label>Курс на </label> <input type="date" name="calendar" value="2018-05-10"
+                                                       max="2018-06-04" min="2012-05-29">
+                        <div>
+                        <input type="text" tabindex="1" placeholder="Суммы можно вводить в любое поле" required th:field="*{convert}">
+                        <select th:field="*{money}">
+                            <th:block th:each="category: ${category}">
+                            <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                            </th:block>
+                        </select>
+                        </div>
+                        <div>
+                        <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                        <select th:field="*{selectMoney}">
+                            <th:block th:each="category: ${category}">
+                                <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                            </th:block>
+                        </select>
+                        </div>
+                        <div>
+                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <select th:field="*{selectMoney}">
+                                <th:block th:each="category: ${category}">
+                                    <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <select th:field="*{selectMoney}">
+                                <th:block th:each="category: ${category}">
+                                    <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <select th:field="*{selectMoney}">
+                                <th:block th:each="category: ${category}">
+                                    <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                                </th:block>
+                            </select>
+                        </div>
+                        <div>
+                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <select th:field="*{selectMoney}">
+                                <th:block th:each="category: ${category}">
+                                    <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
+                                </th:block>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <footer>
+                        <a href="/course" class="rLink" tabindex="5">Посмотреть курсы валют</a>
+                        <input type="submit" class="btnLogin" value="Расчитать" tabindex="4">
+                    </footer>
+                </form>
+            </div><!-- /col-lg-8 -->
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /ww -->
+
+    <div id="footer">
+        <div class="container foot">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h4>Контактная информация</h4>
+                    <p>
+                        Oleg Jablonsky,<br/>
+                        Minsk, Belarus.
+                    </p>
+                </div><!-- /col-lg-4 -->
+
+                <div class="col-lg-4">
+                    <h4>Связь</h4>
+                    <p>
+                        <a href="https://vk.com/jabldouble">VK</a><br/>
+                        <a href="https://t.me/JablDouble">Telegram</a><br/>
+                    </p>
+                </div><!-- /col-lg-4 -->
+
+                <div class="col-lg-4">
+                    <h4>О сервисе</h4>
+                    <p>Сервис берет информацию с официального сайта центробанка РФ, информация обновляется в режиме онлайн.</p>
+                </div><!-- /col-lg-4 -->
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="style/js/bootstrap.min.js"></script>
+</body>
+</html>
