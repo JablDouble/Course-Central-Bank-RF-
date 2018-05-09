@@ -10,7 +10,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
-  	background-color: #ffffff;
+	background: #e0e0e0;
   	font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -38,31 +38,30 @@ h1 {
 	margin: 0 10px 0 10px;
 	box-shadow: 0 0 2px 2px #d6d6d6;
 	font-size: 1.2em;
-	min-height: 200px;
+	min-height: 190px;
 	background: #f2f2f2;
 	padding: 7px;
 	box-sizing: border-box;
 }
 
 .money-down{
-	font-size: 45px;
+	font-size: 35px;
 	color: #ff5d5b;
 	margin-top:0px;
-	margin-bottom:25px;
+	margin-bottom:5px;
 	text-align: left;
 	padding-left:20px;
 }
 .money-up{
-	font-size: 45px;
+	font-size: 35px;
 	color: #a5e7ac;
 	margin-top:0px;
-	margin-bottom:25px;
+	margin-bottom:5px;
 	text-align: left;
 	padding-left:20px;
 }
 .count{
 	margin-bottom:3px;
-	margin-top:15px;
 	text-align: left;
 	padding-left:20px;
 }
@@ -181,6 +180,8 @@ a:after {
 #footer {
 	background-color: #2f2f2f;
 	padding-top: 50px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
 #footer p {
@@ -268,4 +269,10 @@ bt {
 .glyphicon {
 	font-size: 40px;
 	color: #1abc9c;
+}
+
+select{
+	margin-bottom: 21px;
+	margin-top: 10px;
+	width: 70px;
 }

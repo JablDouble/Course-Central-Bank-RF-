@@ -24,6 +24,15 @@ public class Grabber {
                 valute.setCode((String) map1.get("CharCode"));
                 valute.setNominal((Double) map1.get("Nominal"));
                 valute.setValue((Double) map1.get("Value"));
+                valute.setOld_value((Double) map1.get("Previous"));
+                if (valute.getValue() > valute.getOld_value()){
+                    valute.setCourseUp(true);
+                    valute.setCourseUp_p(true);
+                }else {
+                    valute.setCourseUp(false);
+                    valute.setCourseUp_p(false);
+                }
+                valute.setDifference(valute.getValue() - valute.getOld_value());
                 output.add(valute);
             }
         } catch (IOException e) {
