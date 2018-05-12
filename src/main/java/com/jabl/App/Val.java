@@ -6,6 +6,7 @@ public class Val {
     private int id;
     private List<String> content;
     private List<String> selectMoney;
+    private List<Double> outputConvert;
     private long convert;
     private String money;
 
@@ -55,5 +56,13 @@ public class Val {
 
     public void setContent(List content) {
         this.content = content;
+    }
+
+    public List<Double> getOutputConvert() {
+        return outputConvert;
+    }
+
+    public void setOutputConvert(List<Double> outputConvert) {
+        this.outputConvert = outputConvert;
     }
 }

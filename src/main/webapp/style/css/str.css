@@ -156,4 +156,5 @@ footer#main{
     overflow:hidden;
     height:1%;
     width: 600px;
+    box-shadow: 0 0 12px rgba(28, 28, 28, 0.5);
 }
