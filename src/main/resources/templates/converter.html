@@ -4,7 +4,7 @@
 
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
-    <title>Central Bank of Russian Federation </title>
+    <title>Конвертер валют</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="style/css/bootstrap.css">
@@ -34,13 +34,13 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 
             </button>
-            <a class="navbar-brand" href="course.html">Central Bank Of Russian Federation</a>
+            <a class="navbar-brand" href="/">Главная</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="converter">Конвертер валют</a></li>
-                <li><a href="/">Курс валют</a></li>
-                <li><a href="contact.html">Контакты</a></li>
+                <li><a href="course">Курс валют</a></li>
+                <li><a href="contacts">Контакты</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -48,16 +48,17 @@
 
 <!-- +++++ Welcome Section +++++ -->
 <div id="ww">
-    <div class="container">
+    <div class="container main">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 centered">
                 <form action="#" th:action="@{/converter}" th:object="${int}" method="post" class="box login">
                     <fieldset class="boxBody">
                         <label><h1>Конвертер валют</h1></label>
                         <label>Курс на </label> <input type="date" name="calendar" value="2018-05-10"
-                                                       max="2018-06-04" min="2012-05-29">
+                                                       max="2018-06-04" min="2012-05-29"><br/>
+                        <label>Введите в данное поле вашу сумму</label>
                         <div>
-                        <input type="text" tabindex="1" placeholder="Суммы можно вводить в любое поле" required th:field="*{convert}">
+                        <input type="text" tabindex="1" placeholder="Введите в данное поле вашу сумму" required th:field="*{convert}">
                         <select th:field="*{money}">
                             <th:block th:each="category: ${category}">
                             <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
@@ -65,7 +66,7 @@
                         </select>
                         </div>
                         <div>
-                        <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                        <input type="text" tabindex="2" th:placeholder="${convert[0]}" disabled required>
                         <select th:field="*{selectMoney}">
                             <th:block th:each="category: ${category}">
                                 <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
@@ -73,7 +74,7 @@
                         </select>
                         </div>
                         <div>
-                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <input type="text" tabindex="3" th:placeholder="${convert[1]}" disabled required>
                             <select th:field="*{selectMoney}">
                                 <th:block th:each="category: ${category}">
                                     <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
@@ -81,7 +82,7 @@
                             </select>
                         </div>
                         <div>
-                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <input type="text" tabindex="4" th:placeholder="${convert[2]}" disabled required>
                             <select th:field="*{selectMoney}">
                                 <th:block th:each="category: ${category}">
                                     <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
@@ -89,7 +90,7 @@
                             </select>
                         </div>
                         <div>
-                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <input type="text" tabindex="5" th:placeholder="${convert[3]}" disabled required>
                             <select th:field="*{selectMoney}">
                                 <th:block th:each="category: ${category}">
                                     <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>
@@ -97,7 +98,7 @@
                             </select>
                         </div>
                         <div>
-                            <input type="text" tabindex="2" placeholder="Вы можете добавить поле" required>
+                            <input type="text" tabindex="6" th:placeholder="${convert[4]}" disabled required>
                             <select th:field="*{selectMoney}">
                                 <th:block th:each="category: ${category}">
                                     <option th:value="${category.code}"><span class="filter-option pull-left" th:text="${category.code} + ' ' + ${category.name}"></span>&nbsp;<span class="caret"></span></option>

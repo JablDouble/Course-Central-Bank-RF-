@@ -1,9 +1,8 @@
 package com.jabl.App;
 
+import com.jabl.Converter.Converter;
 import com.jabl.Grabber.Grabber;
 import com.jabl.Grabber.Valute;
-import com.sun.deploy.net.HttpResponse;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +17,6 @@ import java.util.List;
 
 @Controller
 public class GETController {
-    Val value = new Val();
 
     @RequestMapping(value = "course", method= RequestMethod.GET)
     public String course(Model model) throws IOException {
@@ -33,7 +31,7 @@ public class GETController {
         }
         model.addAttribute("select",valutes);
         model.addAttribute("category",valutes);
-        model.addAttribute("val", value);
+        model.addAttribute("val", new Val());
         return "course";
     }
 
@@ -67,14 +65,35 @@ public class GETController {
     @RequestMapping(value = "converter", method= RequestMethod.GET)
     public String converter(Model model) {
         List<Valute> valutes = new Grabber().getValute();
+        Val val = new Val();
+        List<Double> Zerolist = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Zerolist.add(0.0);
+        }
+        val.setOutputConvert(Zerolist);
+        System.out.println(val.getOutputConvert());
+        model.addAttribute("convert",val.getOutputConvert());
         model.addAttribute("category",valutes);
-        model.addAttribute("int",new Val());
+        model.addAttribute("int",val);
         return "converter";
     }
 
     @RequestMapping(value = "converter", method= RequestMethod.POST)
-    public String converter(@ModelAttribute Val val,Model model) throws IOException {
-        return "test";
+    public String converter(@ModelAttribute Val val,Model model, BindingResult result) throws IOException {
+        LinkedHashMap<String,Object> modelMap = (LinkedHashMap<String, Object>) result.getModel();
+        List<Valute> valutes = new Grabber().getValute();
+        Val value = (Val) modelMap.get("val");
+        Converter converter = new Converter();
+        val.setOutputConvert(converter.convertation(value.getConvert(),value.getMoney(),value.getSelectMoney()));
+        System.out.println(val.getOutputConvert());
+        model.addAttribute("convert",val.getOutputConvert());
+        model.addAttribute("int",val);
+        model.addAttribute("category",valutes);
+        return "converter";
     }
 
+    @RequestMapping(value = "contacts",method = RequestMethod.GET)
+    public String contact(Model model){
+        return "contact";
+    }
 }
