@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="val" class="com.jabl.App.Val">
+    </bean>
+    <bean id="valute" class="com.jabl.Grabber.Valute">
+    </bean>
+    <bean id="converter" class="com.jabl.Converter.Converter">
+    </bean>
+    <bean id="valuteList" class="com.jabl.Grabber.ValuteList">
+    </bean>
+    <bean id="grabber" class="com.jabl.Grabber.Grabber">
+    </bean>
+</beans>

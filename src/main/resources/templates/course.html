@@ -7,11 +7,15 @@
 
     <title>Курсы валют</title>
 
+    <link rel="shortcut icon" href="style/img/icon.png" type="image/png">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="style/css/bootstrap.css">
+    <link rel="stylesheet" href="style/css/allPages/bootstrap.css">
 
     <!-- Custom styles for this template -->
-    <link href="style/css/main.css" rel="stylesheet">
+    <link href="style/css/allPages/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/css/other/scroll-div.css" />
+    <link rel="stylesheet" href="style/css/other/checkbox.css" />
+    <link rel="stylesheet" href="style/css/other/checkbox.min.css" />
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="style/js/hover.zoom.js"></script>
@@ -23,6 +27,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script type="text/javascript" src="style/js/script.js"></script>
     <![endif]-->
 </head>
 
@@ -52,7 +57,7 @@
             <div class="col-lg-8 col-lg-offset-2 centered">
                 <img src="style/img/user.png" alt="Oleg">
                 <h1>Курс валют Центробанка</h1>
-                <p>На данной странице вы можете увидеть текущий курс, так же вы можете посмотреть информацию о курсе валют за прошедшие дни. Используйте поиск по дате для просмотра данных.</p>
+                <p>На данной странице вы можете увидеть текущий курс, так же вы можете посмотреть информацию о курсе валют за прошедшие дни. Используйте прокручиваемый список для выбора нужной валюты.</p>
                 <p>Ниже представленны курс валют на данный момент. Курс обновляется в режиме онлайн.</p>
 
 
@@ -63,14 +68,39 @@
 
 
 <!-- +++++ Projects Section +++++ -->
+<div class="selectBox">
+<div id="wrapper">
+    <form action="#" th:action="@{/course}" th:object="${val}" method="post">
+    <div id="scroll">
+            <div id="scrollcontent">
+                <div class="el-checkbox el-checkbox-green">
+                    <label class="el-switch el-switch-green">
+                        <input type="checkbox" name="switch" th:text="''">
+                        <span class="el-switch-style"></span>
+                        <p class="valute" th:text="'Выбрать все'"></p>
+                    </label>
+                </div>
+                <th:block th:each="select: ${select}">
+                    <div class="el-checkbox el-checkbox-green">
+                        <label class="el-switch el-switch-green">
+                            <input type="checkbox" name="switch" th:text="''" th:field="*{content}" th:value="${select.code}">
+                            <span class="el-switch-style"></span>
+                            <p class="valute" th:text="${select.name}"></p>
+                        </label>
+                    </div>
+                </th:block>
+            </div>
+        <div id="scrollbar">
+            <div id="scroller" class="scroller"></div>
+        </div>
+    </div>
+        <input class="buttonSubmit" type="submit" value="Применить" />
+    </form>
+</div>
+</div>
+
 
 <div class="container pt">
-    <form action="#" th:action="@{/course}" th:object="${val}" method="post">
-                                <th:block th:each="select: ${select}">
-                                    <input th:text="${select.name}" th:field="*{content}" th:value="${select.code}" type="checkbox"/>
-                                </th:block>
-            <input type="submit" value="Submit" />
-    </form>
     <div class="row mt centered">
         <th:block th:each="category: ${category}">
         <div class="col-lg-4">

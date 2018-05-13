@@ -3,6 +3,9 @@ package com.jabl.App;
 import com.jabl.Converter.Converter;
 import com.jabl.Grabber.Grabber;
 import com.jabl.Grabber.Valute;
+import com.jabl.Grabber.ValuteList;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,9 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 public class GETController {
@@ -47,9 +49,14 @@ public class GETController {
             LinkedHashMap<String,Object> modelMap = (LinkedHashMap<String, Object>) result.getModel();
             Val value = (Val) modelMap.get("val");
             List<String> content = value.getContent();
-            for (String code:content) {
-                if(valute.getCode().equals(code)){
-                    output.add(valute);
+            if (content == null){
+                output.add(valute);
+            }
+            if(content!=null) {
+                for (String code : content) {
+                    if (valute.getCode().equals(code)) {
+                        output.add(valute);
+                    }
                 }
             }
 
@@ -71,7 +78,15 @@ public class GETController {
             Zerolist.add(0.0);
         }
         val.setOutputConvert(Zerolist);
-        System.out.println(val.getOutputConvert());
+        String date = null;
+        try {
+            Date dat = new Grabber().httpConnection().getDate();
+            SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
+            date = newDateFormat.format(dat);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("date",date);
         model.addAttribute("convert",val.getOutputConvert());
         model.addAttribute("category",valutes);
         model.addAttribute("int",val);
@@ -85,7 +100,15 @@ public class GETController {
         Val value = (Val) modelMap.get("val");
         Converter converter = new Converter();
         val.setOutputConvert(converter.convertation(value.getConvert(),value.getMoney(),value.getSelectMoney()));
-        System.out.println(val.getOutputConvert());
+        String date = null;
+        try {
+            Date dat = new Grabber().httpConnection().getDate();
+            SimpleDateFormat newDateFormat = new SimpleDateFormat("dd MMMM yyyy", Locale.getDefault());
+            date = newDateFormat.format(dat);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        model.addAttribute("date",date);
         model.addAttribute("convert",val.getOutputConvert());
         model.addAttribute("int",val);
         model.addAttribute("category",valutes);
@@ -96,4 +119,6 @@ public class GETController {
     public String contact(Model model){
         return "contact";
     }
+
+
 }
