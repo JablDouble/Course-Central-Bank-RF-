@@ -2,6 +2,8 @@ package com.jabl.Grabber;
 
 
 import com.google.gson.Gson;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,7 +43,7 @@ public class Grabber {
         return output;
     }
 
-    private ValuteList httpConnection() throws IOException {
+    public ValuteList httpConnection() throws IOException {
         URL url = new URL("https://www.cbr-xml-daily.ru/daily_json.js");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");

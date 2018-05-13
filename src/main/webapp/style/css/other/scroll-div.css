@@ -1,0 +1,95 @@
+#wrapper {
+    width: 450px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    position: relative;
+    right: 35px;
+
+}
+#scroll {
+    position:relative;
+    width:450px;
+    height:150px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-radius: 10px;
+    border: 3px solid #cfcfcf;
+}
+#scrollcontent {
+    position:absolute;
+    width:500px;
+    z-index:200;
+    padding: 10px;
+}
+#scrollbar {
+    float:right;
+    position:relative;
+    display:none;
+    width:15px;
+    height:100px;
+    z-index:100;
+    background:url(../../img/scroll-bg.gif);
+}
+.scroller {
+    position:absolute;
+    top:0;
+    width:15px;
+    cursor:pointer;
+    background-color:#ccc;
+    background-image:url(../../img/scroll-arrows.gif);
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+.buttonclick {
+    background-color:#bbb
+}
+
+.check{
+    left:30px;
+}
+
+
+.buttonSubmit{
+    left: 465px;
+    bottom: 100px;
+    position: relative;
+    border-radius: 20px;
+    border: 3px solid #cfcfcf;
+    height: 50px;
+    width: 100px;
+    background: #f2f2f2;
+}
+
+.buttonSubmit:hover{
+    background: #e9e9e9;
+}
+
+.valute{
+    left: 50px;
+    top: -2px;
+    width: 600px;
+    position: absolute;
+}
+
+.selectBox{
+    width: 800px;
+    height: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: #f2f2f2;
+    border-radius: 50px;
+    border: 1px solid #cfcfcf;
+    box-shadow: 0 0 2px 2px #bcbcbc;
+}
+::-webkit-scrollbar { width: 7px; height: 3px; border-radius: 10px;}
+::-webkit-scrollbar-button {  background-color: #cfcfcf;}
+::-webkit-scrollbar-track {  background-color: #999; border-radius: 10px;}
+::-webkit-scrollbar-track-piece { background-color: #f2f2f2;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #cfcfcf;}
+::-webkit-scrollbar-corner { background-color: #999; border-radius: 10px;}
+::-webkit-resizer { background-color: #f2f2f2;;border-radius: 10px;}

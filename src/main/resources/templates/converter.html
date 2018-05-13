@@ -5,15 +5,15 @@
     <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 
     <title>Конвертер валют</title>
-
+    <link rel="shortcut icon" href="style/img/icon.png" type="image/png">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="style/css/bootstrap.css">
+    <link rel="stylesheet" href="style/css/allPages/bootstrap.css">
     <link rel="stylesheet" href="style/css/reset.css">
     <link rel="stylesheet" href="style/css/str.css">
     <!--link rel="stylesheet" href="style/css/structure.css">
 
     <!-- Custom styles for this template -->
-    <link href="style/css/main.css" rel="stylesheet">
+    <link href="style/css/allPages/main.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="style/js/hover.zoom.js"></script>
@@ -54,9 +54,8 @@
                 <form action="#" th:action="@{/converter}" th:object="${int}" method="post" class="box login">
                     <fieldset class="boxBody">
                         <label><h1>Конвертер валют</h1></label>
-                        <label>Курс на </label> <input type="date" name="calendar" value="2018-05-10"
-                                                       max="2018-06-04" min="2012-05-29"><br/>
-                        <label>Введите в данное поле вашу сумму</label>
+                        <label th:text="'Курс на ' + ${date}"></label><br>
+                        <label>Введите в поле ниже вашу сумму</label>
                         <div>
                         <input type="text" tabindex="1" placeholder="Введите в данное поле вашу сумму" required th:field="*{convert}">
                         <select th:field="*{money}">

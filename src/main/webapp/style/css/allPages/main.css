@@ -36,7 +36,7 @@ h1 {
 .content{
 	border-radius: 0 0 6px 6px;
 	margin: 0 10px 0 10px;
-	box-shadow: 0 0 2px 3px #cfcfcf;
+	box-shadow: 0 0 2px 2px #cfcfcf;
 	font-size: 1.2em;
 	min-height: 190px;
 	background: #f2f2f2;
@@ -121,7 +121,7 @@ a:after {
 
 .navbar-inverse {
 	padding-bottom: 20px;
-	padding-top: 15px;
+	padding-top: 25px;
 }
 
 .navbar-inverse {
@@ -163,9 +163,6 @@ a:after {
 	margin-bottom: 40px;
 }
 
-.pt {
-	padding-top: 50px;
-}
 
 
 /* +++++ WRAP SECTIONS +++++ */
